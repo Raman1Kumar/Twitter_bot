@@ -1,0 +1,17 @@
+from h11 import CLIENT
+
+
+BEARER_TOKEN=""
+
+
+
+ACCESS_TOKEN=""
+
+
+
+ACCESS_TOKEN_SECRET=""
+
+CLIENT_ID=""
+CLIENT_ID_SECRET=""
+API_KEY=""
+API_SECRET=""
