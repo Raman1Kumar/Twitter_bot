@@ -7,6 +7,15 @@
 
 Here's the [Instagram Page](https://www.instagram.com/famous_._quotes_/)
 
+Here's the [Twitter Page](https://twitter.com/Famco1234) (Although Stopped due to twitter Api not free anymore)
+
+
+
+## Demo
+
+- See How It works [Video](https://www.youtube.com/watch?v=X9DXWxI0avI)
+
+
 
 
 
@@ -37,7 +46,4 @@ The Complete Process of Generating and posting of instagram images occur in 2 st
 -  Automated Instagram Page
 
 
-## Demo
-
-Insert gif or link to demo
 
