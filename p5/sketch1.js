@@ -22,7 +22,7 @@ async function fetchBackgroundImage() {
 ////////////PRELOAD
 function preload() {
   (async () => {
-    response = await fetch("../middle.json");
+    response = await fetch("../state_track/middle.json");
     data = await response.json();
 
     console.log(data);

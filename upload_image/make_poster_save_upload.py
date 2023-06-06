@@ -23,9 +23,9 @@ from upload_image.upload_img import upload_img
 
 # SaveImages ->Open browser using selenium and download image created by p5js on http://127.0.0.1:8000//p5/index.html or local host
 def SaveImages(FileNumber,TweerNNumber):
-    print("here")
+  
     pyJsonJs(FileNumber,TweerNNumber)
-    print("nother")
+   
     browser=webdriver.Chrome()
     browser.get("http://127.0.0.1:8000//p5/index.html")
     time.sleep(10)
@@ -95,7 +95,7 @@ def making_poster_uploading():
             # Tranfering image ended
 
             # Posting image
-            while not os.path.exists(f"./pic/{FileNumber}#{TweetNumber}.jpg"):
+            while not os.path.exists(f"./../pic/{FileNumber}#{TweetNumber}.jpg"):
                 time.sleep(1)
                 time_counter += 1
                 print(time_counter)
@@ -109,7 +109,7 @@ def making_poster_uploading():
 
             
             # upload_img(FileNumber,TweetNumber)
-            with open("curr.txt","w") as file:
+            with open("./state_track/curr.txt","w") as file:
                 temp=f"{FileNumber}#{TweetNumber+1}#{datetime.now().date()}"
                 file.write(temp)
                 print("new data successfully updated")
@@ -124,4 +124,3 @@ def making_poster_uploading():
     else:
         print("Today mail sent")
     # 3rd case end;
-
