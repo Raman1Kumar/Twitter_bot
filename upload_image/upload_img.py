@@ -2,11 +2,16 @@ import cloudinary
 from cloudinary.uploader import upload
 from cloudinary.utils import cloudinary_url
 import json
-from set_interval import set_interval 
-import credential
 
 import requests
 
+import sys
+sys.path.insert(1,'F:\\coding project\\insta_bot(twitter)')
+# sys.path.insert(1,'F:\\coding project\\insta_bot(twitter)\\credential.py')
+
+import credential
+
+from utils.set_interval import set_interval 
 
 
 # Getting credential

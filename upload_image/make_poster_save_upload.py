@@ -5,41 +5,45 @@ from textwrap import TextWrapper
 
 from pyautogui import sleep
 # from strem1 import doit
-from upload_img import upload_img
 from datetime import date, datetime
-from pyJsonJs import pyJsonJs
+
 
 from selenium import webdriver
 import time
 from selenium.webdriver.common.by import By
 import os 
 
-from transfer_photo import transfer
 
+import sys
+sys.path.insert(1,'F:\\coding project\\insta_bot(twitter)')
+from utils.transfer_photo import transfer
+from utils.pyJsonJs import pyJsonJs
+from upload_image.upload_img import upload_img
+
+
+# SaveImages ->Open browser using selenium and download image created by p5js on http://127.0.0.1:8000//p5/index.html or local host
+def SaveImages(FileNumber,TweerNNumber):
+    print("here")
+    pyJsonJs(FileNumber,TweerNNumber)
+    print("nother")
+    browser=webdriver.Chrome()
+    browser.get("http://127.0.0.1:8000//p5/index.html")
+    time.sleep(10)
+    while not os.path.exists(f"C:\\Users\\RAMAN KUMAR\\Downloads\\{FileNumber}#{TweetNumber}.jpg"):
+            time.sleep(1)
+            time_counter += 1
+            print(time_counter)
+            if time_counter > time_to_wait:break
+
+    # Save image ended
 
 
 
 def making_poster_uploading():
 
-    # SaveImages ->Open browser using selenium and download image created by p5js on http://127.0.0.1:8000//p5/index.html or local host
-    def SaveImages(FileNumber,TweerNNumber):
-        pyJsonJs(FileNumber,TweerNNumber)
-        browser=webdriver.Chrome()
-        browser.get("http://127.0.0.1:8000//p5/index.html")
-        time.sleep(10)
-        while not os.path.exists(f"C:\\Users\\RAMAN KUMAR\\Downloads\\{FileNumber}#{TweetNumber}.jpg"):
-                time.sleep(1)
-                time_counter += 1
-                print(time_counter)
-                if time_counter > time_to_wait:break
-
-        # Save image ended
-
-
-
 
     # Open log file and get data for tweet number and tweet day;
-    with open("./curr.txt","r") as file:
+    with open("./state_track/curr.txt","r") as file:
         global data
         global day
         global TweetNumber
@@ -60,7 +64,7 @@ def making_poster_uploading():
 
     # 1st updating previous day with current day (when 0 image uploaded)
     if(TDate!=str(datetime.now().date())):
-        with open("curr.txt","w") as file:
+        with open("./state_track/curr.txt","w") as file:
             temp=f"{FileNumber+1}#{0}#{datetime.now().date()}"
             print(temp)
             file.write(temp)
